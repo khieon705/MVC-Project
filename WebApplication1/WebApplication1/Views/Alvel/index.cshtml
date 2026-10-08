@@ -1,0 +1,101 @@
+@model WebApplication1.Models.UserProfile
+
+@{
+    ViewData["Title"] = "Student Profile Card";
+}
+
+<link rel="stylesheet" href="~/css/alvellicense.css" />
+
+<div class="container my-4">
+    <div class="text-center mb-4">
+        <h2>Student Profile & ID Card</h2>
+    </div>
+    <div class="license-card">
+        <div class="state-header">@Model.University</div>
+
+        <div class="header-banner">
+            <h1>STUDENT DRIVER PERMIT</h1>
+            <div class="banner-row">
+                <div>ID No: <strong>@Model.StudentNumber</strong></div>
+                <div>DEGREE: <strong>@Model.Degree</strong></div>
+            </div>
+            <div class="banner-row">
+                <div>DOB: <strong>@Model.BirthDate</strong></div>
+                <div>AGE: <strong>@Model.Age</strong></div>
+            </div>
+        </div>
+
+        <table class="stats-table">
+            <tr>
+                <th>SEX</th>
+                <th>HEIGHT</th>
+                <th>WEIGHT</th>
+                <th>BLOOD</th>
+                <th>EYES</th>
+            </tr>
+            <tr>
+                <td>@Model.Sex</td>
+                <td>@Model.Height</td>
+                <td>@Model.Weight</td>
+                <td>@Model.BloodType</td>
+                <td>@Model.EyeColor</td>
+            </tr>
+        </table>
+
+        <div class="restrictions">
+            Degree: <span>@Model.Degree</span>
+        </div>
+
+        <div class="person-name">@Model.LastName, @Model.FirstName @Model.MiddleName</div>
+        <div class="address">
+            @Model.Street, @Model.Barangay<br />
+            @Model.City, @Model.Province @Model.ZipCode
+        </div>
+
+        <div class="signature">@Model.FirstName @Model.LastName</div>
+
+        <div class="photo-box">
+            <img src="@Model.ImageUrl" alt="Student Photo" />
+        </div>
+
+        <div class="dl-badge">ID</div>
+    </div>
+    <div class="card mt-4 p-4 shadow-sm mx-auto" style="max-width: 700px;">
+        <h4 class="border-bottom pb-2">Full Profile Data</h4>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <p><strong>Full Name:</strong> @Model.FirstName @Model.MiddleName @Model.LastName</p>
+                <p><strong>University:</strong> @Model.University</p>
+                <p><strong>Student No:</strong> @Model.StudentNumber</p>
+                <p><strong>Degree:</strong> @Model.Degree</p>
+                <p><strong>Email:</strong> @Model.EmailAddress</p>
+                <p><strong>Contact:</strong> @Model.ContactNumber</p>
+                <p><strong>Civil Status:</strong> @Model.CivilStatus</p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>Nationality:</strong> @Model.Nationality</p>
+                <p><strong>Religion:</strong> @Model.Religion</p>
+                <p><strong>Region:</strong> @Model.Region</p>
+                <p><strong>Hair / Eye Color:</strong> @Model.HairColor / @Model.EyeColor</p>
+                <p><strong>Favorite Color:</strong> @Model.FavoriteColor</p>
+                <p><strong>Full Address:</strong> @Model.Street, @Model.Barangay, @Model.City, @Model.Province, @Model.ZipCode</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="card mt-4 p-4 shadow-sm mx-auto mb-5" style="max-width: 750px;">
+        <h4 class="border-bottom pb-2">Reference & Inspiration</h4>
+        <div class="text-center mt-3">
+            <p class="text-muted">Reference:</p>
+            
+            <img src="~/images/referencelicense.jpg" alt="Reference ID Card" class="img-fluid rounded border shadow-sm mb-3" style="max-width: 100%; max-height: 400px;" />
+    
+            <div>
+                <a href="https://www.ebay.com/itm/126564536161" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
+                    <i class="bi bi-box-arrow-up-right"></i> View Reference Source
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

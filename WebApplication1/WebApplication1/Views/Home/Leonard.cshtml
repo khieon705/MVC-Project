@@ -1,11 +1,157 @@
+@model WebApplication1.Models.Biodata
+
 @{
     ViewData["Title"] = "Leonard";
+    var m = Model;
 }
 
-<div class="text-center">
-    <h1 class="title">Leonard</h1>
+<style>
+    .license-card {
+        display: flex;
+        max-width: 700px;
+        aspect-ratio: 1.6;
+        margin: auto;
+        border: 2px solid BLACK;
+        border-radius: 10px;
+        background-image: url('/assets/images/leonard-background.png');
+        background-size: cover;
+        background-position: center;
+        font-family: Arial;
+        overflow: hidden;
+    }
+    
+    .license-card small {
+        font-size: .75rem;
+        font-weight: normal;
+        color: BLACK;
+    }
+
+    .left-side, .right-side { 
+        display: flex; 
+        flex-direction: column; 
+        padding: 12px;
+    }
+    
+    .left-side {
+        flex: 1;
+        gap: 8px;
+    }
+    
+    .right-side {
+        flex: 1.70;
+        gap: 10px;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .license-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: ROYALBLUE;
+    }
+
+    .license-header h2 {
+        margin: 0;
+        font-size: 3.5rem;
+        font-family: 'Arial Black';
+        text-shadow: 3px 2px 0 BLACK;
+        line-height: 1;
+    }
+    
+    .student-information p {
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .personal-information {
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 6px 16px;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    .personal-information small {
+        display: block; 
+    }
+
+    .personal-photo {
+        flex: 1;
+        border: 1px solid BLACK;
+        min-height: 0;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .signature {
+        align-self: flex-start;
+        height: 75px;
+    }
+
+    .barcode {
+        flex: 1;
+        border: 1px solid BLACK;
+        min-height: 0;
+        width: 100%;
+        object-fit: fill;
+    }
+</style>
+
+<div class="license-card">
+
+    <div class="left-side">
+        <img class="personal-photo" src="~/assets/images/leonard-mclovin.png" alt="Photo" />
+
+        <div class="name">
+            <strong>
+                @m.LastName.ToUpper(),
+                @m.FirstName.ToUpper()
+                @m.MiddleName[0].
+            </strong>
+        </div>
+
+        <div class="contact-information">
+            @m.ContactNumber <br/> 
+            @m.EmailAddress
+        </div>
+
+        <div class="address">
+            @m.Street, @m.Barangay, @m.City,<br />
+            @m.Province, @m.Region, @m.ZipCode
+        </div>
+    </div>
+
+    <div class="right-side">
+        <div class="license-header">
+            <h2>McLOVIN</h2>
+            <div>FANCLUB<br/>CARD</div>
+        </div>
+
+        <div class="student-information">
+            <p><small>SCHOOL:</small> @m.University</p>
+            <p><small>STUDENT ID:</small> @m.StudentNumber</p>
+            <p><small>COURSE, YEAR & SECTION:</small> @m.CourseCode @m.YearSection</p>
+        </div>
+
+        <div class="personal-information">
+            <div><small>HEIGHT</small>@m.Height</div>
+            <div><small>WEIGHT</small>@m.Weight</div>
+            <div><small>HAIR</small>@m.HairColor</div>
+            <div><small>EYES</small>@m.EyeColor</div>
+            <div><small>SEX</small>@m.Sex</div>
+            <div><small>AGE</small>@m.Age</div>
+            <div><small>BLOOD</small>@m.BloodType</div>
+            <div><small>CIVIL STATUS</small>@m.CivilStatus</div>
+            <div><small>CITIZENSHIP</small>@m.Citizenship</div>
+            <div><small>RELIGION</small>@m.Religion</div>
+            <div><small>FAVORITE COLOR</small>@m.FavoriteColor</div>
+        </div>
+
+        <img class="signature" src="~/assets/images/leonard-signature.png" alt="Signature" />
+        <img class="barcode" src="~/assets/images/leonard-barcode.png" alt="Barcode" />
+    </div>
 </div>
-
-@model List<WebApplication1.Models.Biodata>
-
-<p>@Model[0].LastName, @Model[0].FirstName, @Model[0].MiddleName</p>

@@ -5,6 +5,7 @@ namespace WebApplication1.Models
         public string LastName { get; set; } = string.Empty;
         public string FirstName { get; set; } = string.Empty;
         public string MiddleName { get; set; } = string.Empty;
+        public string University { get; set; } = string.Empty;
         public string StudentNumber { get; set; } = string.Empty;
         public string CourseCode { get; set; } = string.Empty;
         public string YearSection { get; set; } = string.Empty;
@@ -28,6 +29,5 @@ namespace WebApplication1.Models
         public string HairColor { get; set; } = string.Empty;
         public string EyeColor { get; set; } = string.Empty;
         public string FavoriteColor { get; set; } = string.Empty;
-        public string FavoriteFood { get; set; } = string.Empty;
     }
 }

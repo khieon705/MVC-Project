@@ -18,21 +18,20 @@ namespace WebApplication1.Controllers
 
         public IActionResult Leonard()
         {
-            var leonard_biodata = new List<Biodata>
+            var leonardBiodata = new Biodata
             {
-                new Biodata
-                {
                     LastName = "Futol",
                     FirstName = "Leonard",
                     MiddleName = "Fungo",
+                    University = "PUP - Sta. Mesa",
                     StudentNumber = "2024-01101-MN-0",
                     CourseCode = "BSCS",
                     YearSection = "3-2",
                     BirthDate = "04-14-2006",
-                    Age = "29",
+                    Age = "20",
                     Sex = 'M',
-                    Street = "15 Ruben Jr. St., Richland 1 Subdivision",
-                    Barangay = "Sauyo",
+                    Street = "15 Ruben Jr. St., Richland 1 Subd.",
+                    Barangay = "Brgy. Sauyo",
                     City = "Quezon City",
                     Province = "Metro Manila",
                     Region = "NCR",
@@ -41,18 +40,16 @@ namespace WebApplication1.Controllers
                     EmailAddress = "leonard.futol.14@gmail.com",
                     CivilStatus = "Single",
                     Citizenship = "Filipino",
-                    Religion = "Roman Catholic",
-                    Height = "170 cm",
-                    Weight = "65 kg",
+                    Religion = "Catholic",
+                    Height = "170cm",
+                    Weight = "65kg",
                     BloodType = "N/A",
                     HairColor = "Black",
                     EyeColor = "Brown",
                     FavoriteColor = "Blue",
-                    FavoriteFood = "Dinakdakan"
-                }
             };
 
-            return View(leonard_biodata);
+            return View(leonardBiodata);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

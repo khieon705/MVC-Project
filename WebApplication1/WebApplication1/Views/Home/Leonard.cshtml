@@ -8,8 +8,9 @@
 <style>
     .license-card {
         display: flex;
-        max-width: 700px;
+        width: 700px;
         aspect-ratio: 1.6;
+        flex-shrink: 0;
         margin: auto;
         border: 2px solid BLACK;
         border-radius: 10px;
@@ -51,14 +52,16 @@
         align-items: center;
         gap: 10px;
         color: ROYALBLUE;
+        font-weight: bold;
+        text-shadow: 1px 0.5px 0 BLACK;
     }
 
     .license-header h2 {
         margin: 0;
         font-size: 3.5rem;
         font-family: 'Arial Black';
-        text-shadow: 3px 2px 0 BLACK;
         line-height: 1;
+        text-shadow: 3px 2px 0 BLACK;
     }
     
     .student-information p {
@@ -99,59 +102,76 @@
         width: 100%;
         object-fit: fill;
     }
+
+    .inspo-link {
+        font-size: 1rem;
+        font-weight: bold;
+        font-family: Arial;
+        font-style: italic;
+        font-color: ROYALBLUE;
+        text-align: center;
+        margin-top: 20px;
+    }
 </style>
 
-<div class="license-card">
+<div>
+    <div class="license-card">
 
-    <div class="left-side">
-        <img class="personal-photo" src="~/assets/images/leonard-mclovin.png" alt="Photo" />
+        <div class="left-side">
+            <img class="personal-photo" src="~/assets/images/leonard-mclovin.png" alt="Photo" />
 
-        <div class="name">
-            <strong>
-                @m.LastName.ToUpper(),
-                @m.FirstName.ToUpper()
-                @m.MiddleName[0].
-            </strong>
+            <div class="name">
+                <strong>
+                    @m.LastName.ToUpper(),
+                    @m.FirstName.ToUpper()
+                    @m.MiddleName[0].
+                </strong>
+            </div>
+
+            <div class="contact-information">
+                @m.ContactNumber <br/> 
+                @m.EmailAddress
+            </div>
+
+            <div class="address">
+                @m.Street, @m.Barangay, @m.City,<br/>
+                @m.Province, @m.Region, @m.ZipCode
+            </div>
         </div>
 
-        <div class="contact-information">
-            @m.ContactNumber <br/> 
-            @m.EmailAddress
-        </div>
+        <div class="right-side">
+            
+            <div class="license-header">
+                <h2>McLOVIN</h2>
+                <div>DRIVER'S<br/>LICENSE</div>
+            </div>
 
-        <div class="address">
-            @m.Street, @m.Barangay, @m.City,<br />
-            @m.Province, @m.Region, @m.ZipCode
+            <div class="student-information">
+                <p><small>SCHOOL:</small> @m.University</p>
+                <p><small>STUDENT ID:</small> @m.StudentNumber</p>
+                <p><small>DEGREE/PROGRAM:</small> @m.Degree</p>
+            </div>
+
+            <div class="personal-information">
+                <div><small>HEIGHT</small>@m.Height</div>
+                <div><small>WEIGHT</small>@m.Weight</div>
+                <div><small>HAIR</small>@m.HairColor</div>
+                <div><small>EYES</small>@m.EyeColor</div>
+                <div><small>SEX</small>@m.Sex</div>
+                <div><small>AGE</small>@m.Age</div>
+                <div><small>BLOOD</small>@m.BloodType</div>
+                <div><small>CIVIL STATUS</small>@m.CivilStatus</div>
+                <div><small>NATIONALITY</small>@m.Nationality</div>
+                <div><small>RELIGION</small>@m.Religion</div>
+                <div><small>FAVORITE COLOR</small>@m.FavoriteColor</div>
+            </div>
+
+            <img class="signature" src="~/assets/images/leonard-signature.png" alt="Signature" />
+            <img class="barcode" src="~/assets/images/leonard-barcode.png" alt="Barcode" />
         </div>
     </div>
 
-    <div class="right-side">
-        <div class="license-header">
-            <h2>McLOVIN</h2>
-            <div>FANCLUB<br/>CARD</div>
-        </div>
-
-        <div class="student-information">
-            <p><small>SCHOOL:</small> @m.University</p>
-            <p><small>STUDENT ID:</small> @m.StudentNumber</p>
-            <p><small>COURSE, YEAR & SECTION:</small> @m.CourseCode @m.YearSection</p>
-        </div>
-
-        <div class="personal-information">
-            <div><small>HEIGHT</small>@m.Height</div>
-            <div><small>WEIGHT</small>@m.Weight</div>
-            <div><small>HAIR</small>@m.HairColor</div>
-            <div><small>EYES</small>@m.EyeColor</div>
-            <div><small>SEX</small>@m.Sex</div>
-            <div><small>AGE</small>@m.Age</div>
-            <div><small>BLOOD</small>@m.BloodType</div>
-            <div><small>CIVIL STATUS</small>@m.CivilStatus</div>
-            <div><small>CITIZENSHIP</small>@m.Citizenship</div>
-            <div><small>RELIGION</small>@m.Religion</div>
-            <div><small>FAVORITE COLOR</small>@m.FavoriteColor</div>
-        </div>
-
-        <img class="signature" src="~/assets/images/leonard-signature.png" alt="Signature" />
-        <img class="barcode" src="~/assets/images/leonard-barcode.png" alt="Barcode" />
+    <div class="inspo-link">
+        <p>Inspiration: <a href="https://ph.pinterest.com/search/pins/?q=mclovin%20card%20superbad&rs=typed">McLovin's drivers license from Superbad</a></p>
     </div>
 </div>

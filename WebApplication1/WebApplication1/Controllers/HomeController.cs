@@ -35,7 +35,7 @@ namespace WebApplication1.Controllers
                     Province = "Metro Manila",
                     Region = "NCR",
                     ZipCode = "1116",
-                    ContactNumber = "09944308226",
+                    ContactNumber = "+639944308226",
                     EmailAddress = "leonard.futol.14@gmail.com",
                     CivilStatus = "Single",
                     Nationality = "Filipino",

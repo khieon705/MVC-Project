@@ -40,6 +40,7 @@ namespace WebApplication1.Controllers
                 School = "PUP - Sta. Mesa",
                 Program = "BS Computer Science",
                 CivilStatus = "Single",
+                Phone = "0932-249-3619",
                 PictureUrl = "/wwwroot/images/card/ID_Pic.jpg",
                 ProjectQRUrl = "/wwwroot/images/card/CollabWiseQR.png"
             };

@@ -13,6 +13,7 @@ namespace WebApplication1.Models
         public string School { get; set; } = "";
         public string Program { get; set; } = "";
         public string CivilStatus { get; set; } = "";
+        public string Phone { get; set; } = "";
         public string PictureUrl { get; set; } = "";
         public string ProjectQRUrl { get; set; } = "";
     }

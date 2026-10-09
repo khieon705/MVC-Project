@@ -20,8 +20,8 @@ namespace WebApplication1.Controllers
         {
             var KentID = new CardViewModel
             {
-                LastName = "Escorel",
-                FirstName = "Kent Andrew",
+                LastName = "ESCOREL",
+                FirstName = "KENT ANDREW",
                 Address = new Address
                 {
                     AddressLine1 = "BLK 6 Lot 1 Fercon St. Ext.",

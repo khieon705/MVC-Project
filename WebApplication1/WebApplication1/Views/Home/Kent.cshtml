@@ -1,3 +1,5 @@
+@model WebApplication1.Models.CardViewModel
+
 <style>
     .license-card {
         width: 100%;
@@ -6,6 +8,7 @@
         margin: auto;
         border: 2px solid black;
         border-radius: 10px;
+        background-image: url('/images/card/BG.png');
         background-size: cover;
         background-position: center;
         font-family: Arial, sans-serif;
@@ -17,7 +20,6 @@
 
     .top {
         flex: 0 0 auto;
-        background-color: #f0f0f0;
         padding: 10px;
         text-align: center;
         font-family: "Franklin Gothic Medium",
@@ -25,7 +27,7 @@
     }
 
     .top h1 {
-        font-size: 50px;
+        font-size: 35px;
         margin: 5px 0;
         font-weight: bold;
     }
@@ -39,22 +41,22 @@
     width: 100%;
 }
 
-.license-heading::before,
-.license-heading::after {
-    content: "";
-    flex: 1;
-    max-width: 180px;
-    height: 2px;
-    background-color: black;
-}
+    .license-heading::before,
+    .license-heading::after {
+        content: "";
+        flex: 1;
+        max-width: 180px;
+        height: 2px;
+        background-color: black;
+    }
 
-.license-heading h2 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    white-space: nowrap;
-}
+    .license-heading h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        white-space: nowrap;
+    }
 
     .bottom {
         flex: 1;
@@ -86,7 +88,61 @@
         min-width: 0;
     }
 
-    
+    .info-group-1,
+    .info-group-2,
+    .info-group-3 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+    }
+
+    .info-group-1 p,
+    .info-group-2 p,
+    .info-group-3 p {
+        margin: 0;
+    }
+
+    .info-group-3 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    position: relative;
+}
+
+.education-info {
+    flex: 1;
+    min-width: 0;
+    transform: translateY(-8px);
+}
+
+.qr-section {
+    flex: 0 0 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    margin-left: auto;
+    align-self: flex-end;
+    transform: translateY(12px);
+}
+
+.qr-section img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.qr-section p {
+    font-size: 8px;
+    margin: 0;
+    line-height: 1.2;
+}
 </style>
 
 <div class="license-card">
@@ -106,6 +162,44 @@
         </div>
 
         <div class="info">
+            <h3><b>@Model.LastName, @Model.FirstName</b></h3>
+            <div class="info-group-1">
+                <p class="card-number"><b>Student ID:</b> @Model.CardNumber</p>
+                <p><b>Address:</b> @string.Join(", ", new[] {
+                    Model.Address.AddressLine1,
+                    Model.Address.AddressLine2,
+                    Model.Address.Barangay,
+                    Model.Address.City,
+                    Model.Address.Region,
+                    Model.Address.PostalCode,
+                    Model.Address.Country
+                }.Where(x => !string.IsNullOrWhiteSpace(x)))</p>
+            </div>
+
+            <div class="info-group-2">
+                <p><b>Sex:</b> @Model.Sex</p>
+                <p><b>Date of Birth:</b> @Model.DateOfBirth</p>
+                <p><b>Civil Status:</b> @Model.CivilStatus</p>
+                <p><b>Email:</b> @Model.Email</p>
+                <p><b>Phone:</b> @Model.Phone</p>
+            </div>
+
+            <div class="info-group-3">
+                <div class="education-info">
+                    <p><b>University:</b> @Model.School</p>
+                    <p><b>Program:</b> @Model.Program</p>
+                    <p>
+                        <b>Skills:</b>
+                        @string.Join(", ", Model.Skills)
+                    </p>
+                </div>
+
+                <div class="qr-section">
+                    <img src="/images/card/CollabWiseQR.png"
+                        alt="LocCabWise QR Code" />
+                    <p>SCAN TO VIEW PROJECT</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

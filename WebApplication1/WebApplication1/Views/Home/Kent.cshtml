@@ -1,0 +1,111 @@
+<style>
+    .license-card {
+        width: 100%;
+        max-width: 700px;
+        aspect-ratio: 1.6;
+        margin: auto;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+    .top {
+        flex: 0 0 auto;
+        background-color: #f0f0f0;
+        padding: 10px;
+        text-align: center;
+        font-family: "Franklin Gothic Medium",
+                     "Franklin Gothic", Arial, sans-serif;
+    }
+
+    .top h1 {
+        font-size: 50px;
+        margin: 5px 0;
+        font-weight: bold;
+    }
+
+    .license-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 8px auto 0;
+    width: 100%;
+}
+
+.license-heading::before,
+.license-heading::after {
+    content: "";
+    flex: 1;
+    max-width: 180px;
+    height: 2px;
+    background-color: black;
+}
+
+.license-heading h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+    .bottom {
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        gap: 12px;
+        padding: 12px;
+        box-sizing: border-box;
+    }
+
+    .photo {
+        flex: 0 0 35%;
+        min-width: 0;
+        min-height: 0;
+        border: 1px solid black;
+        overflow: hidden;
+    }
+
+    .photo img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    
+</style>
+
+<div class="license-card">
+    <div class="top">
+        <h1>APPLICATION DEVELOPMENT</h1>
+        <div class="license-heading">
+            
+            <h2>LICENSE</h2>
+            
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div class="photo">
+            <img src="/images/card/ID_Pic.jpg"
+                 alt="Kent Andrew Escorel" />
+        </div>
+
+        <div class="info">
+        </div>
+    </div>
+</div>
